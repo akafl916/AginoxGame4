@@ -24,12 +24,14 @@ public class Boss : MonoBehaviour
     private bool isHard;
     private int hardRotation = 17;
 
+    private Animator animator;
     private GameObject projectilePrefab;
     private Player player;
     private GameObject BossBar;
     
     private void Start()
     {
+        animator = this.gameObject.GetComponent<Animator>();
         health = MAX_HEALTH;
         BossBar = GameObject.Find("LEVELUI").transform.GetChild(3).gameObject;
         projectilePrefab = this.gameObject.transform.GetChild(0).gameObject;
@@ -39,7 +41,6 @@ public class Boss : MonoBehaviour
 
     private void updateUI()
     {
-        Debug.Log(BossBar.transform.GetChild(2).gameObject);
         BossBar.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Health: " + health + "/" + MAX_HEALTH;
         BossBar.transform.GetChild(3).gameObject.GetComponent<Text>().text = "Honor\n" + damage*100;
         BossBar.transform.GetChild(4).gameObject.GetComponent<Text>().text = name;
@@ -68,14 +69,18 @@ public class Boss : MonoBehaviour
 
     private void attackPlayer()
     {
-
         if(easyRangeTimer >= easyRangeTime)
         {
+            animator.SetTrigger("isAttacking");
             easyRangeAttack();
             easyRangeTimer = 0;
         }
         if (hardRangeTimer >= hardRangeTime)
         {
+            if(!isHard)
+            {
+                animator.SetTrigger("isAttacking");
+            }
             isHard = true;
         }
     }

@@ -9,17 +9,33 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public float speed;
+    public float pHorizontal;
+    public float pVertical;
+    public float horizontal;
+    public float vertical;
+
     private Vector2 movement;
 
     private void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
-    // Update is called once per frame
+
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+
+        movement.x = horizontal;
+        movement.y = vertical;
+
+        speed = movement.magnitude;
+        if(speed > 0.01)
+        {
+            pHorizontal = horizontal;
+            pVertical = vertical;
+        }
     }
 
     private void FixedUpdate()

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     private GameObject UI;
     private PlayerMovement movementScript;
+    private Animator animator;
 
     public static int MAX_HEALTH = 100;
     public static int INITIAL_DAMAGE = 10;
@@ -29,8 +30,21 @@ public class Player : MonoBehaviour
     private List<GameObject> enemiesInRange;
     private List<GameObject> npcsInRange;
 
+    private void setAnimationValues()
+    {
+        animator.SetFloat("Horizontal", movementScript.horizontal);
+        animator.SetFloat("Vertical", movementScript.vertical);
+        animator.SetFloat("pHorizontal", movementScript.pHorizontal);
+        animator.SetFloat("pVertical", movementScript.pVertical);
+        animator.SetFloat("Speed", movementScript.speed);
+
+    }
+
     private void debug()
     {
+        damage = 1000;
+
+
         Debug.Log("health: " + health);
         Debug.Log("maxhealth: " + MAX_HEALTH);
         Debug.Log("damage: " + damage);
@@ -65,6 +79,7 @@ public class Player : MonoBehaviour
 
         UI = GameObject.Find("LEVELUI");
         movementScript = this.gameObject.GetComponent<PlayerMovement>();
+        animator = this.gameObject.GetComponent<Animator>();
         enemiesInRange = new List<GameObject>();
         npcsInRange = new List<GameObject>();
         if (runs++ < 1)
@@ -92,6 +107,7 @@ public class Player : MonoBehaviour
                 string scene = "";
                 scene += (SceneManager.GetActiveScene().buildIndex + 1);
                 scene += nextScene;
+                Debug.Log(scene);
                 new SceneButtonManager().toCutscene(scene);
             }
             return true;
@@ -101,7 +117,7 @@ public class Player : MonoBehaviour
 
     private void die()
     {
-        GameObject deathPanel = UI.transform.GetChild(5).gameObject;
+        GameObject deathPanel = UI.transform.GetChild(8).gameObject;
         deathPanel.SetActive(true);
 
         Color deathPanelColor = deathPanel.GetComponent<Image>().color;
@@ -161,6 +177,8 @@ public class Player : MonoBehaviour
         HUD.GetComponent<Slider>().value = (float) health / (float) MAX_HEALTH;
         HUD.transform.GetChild(2).GetComponent<Text>().text = "Health: " + health + "/" + MAX_HEALTH;
         HUD.transform.GetChild(3).GetComponent<Text>().text = "HONOR:\n" + damage;
+
+        HUD.transform.parent.transform.GetChild(5).GetComponent<Text>().text = "Enemies Left: " + GameObject.FindGameObjectsWithTag("Enemy").Length;
     }
 
     public void useItem(int index)
@@ -216,14 +234,14 @@ public class Player : MonoBehaviour
         {
             if(Input.GetButtonDown("Attack"))
             {
-                enemy.takeDamage(damage);
+                doDamage(enemy.gameObject);
             }
         }
         if(boss != null)
         {
             if (Input.GetButtonDown("Attack"))
             {
-                boss.takeDamage(damage);
+                doDamage(boss.gameObject);
             }
         }
     }
@@ -264,9 +282,16 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void doDamage(Enemy enemy)
+    public void doDamage(GameObject enemy)
     {
-        enemy.takeDamage(damage);
+        if (enemy.GetComponent<Boss>() != null)
+        {
+            enemy.GetComponent<Boss>().takeDamage(damage);
+        } else
+        {
+            enemy.GetComponent<Enemy>().takeDamage(damage);
+        }
+        animator.SetTrigger("isAttacking");
     }
 
     private void Update()
@@ -300,5 +325,7 @@ public class Player : MonoBehaviour
 
         updateInventory();
         updateHUD();
+        setAnimationValues();
+
     }
 }

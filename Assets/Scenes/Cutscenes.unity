@@ -187,8 +187,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000013828, y: -181}
-  m_SizeDelta: {x: 623.1738, y: 61.951}
+  m_AnchoredPosition: {x: 9.34491, y: -179.65913}
+  m_SizeDelta: {x: 781.3143, y: 107.5398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157999941
 MonoBehaviour:
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 797933607f9c424478e4c661e96f69e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -313,7 +313,6 @@ GameObject:
   m_Component:
   - component: {fileID: 389018184}
   - component: {fileID: 389018183}
-  - component: {fileID: 389018185}
   m_Layer: 0
   m_Name: FinalScene
   m_TagString: Untagged
@@ -334,13 +333,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overlays:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 2e282ce5f87524f4395eb912a05d53ea, type: 3}
+  - {fileID: 21300000, guid: 43ab7cf7eaed67d4183c18a73f4f5fa0, type: 3}
+  - {fileID: 21300000, guid: 9462b40e169c88448a2ccf364397c8b5, type: 3}
   rawDialogues:
-  - asdf
-  - asdf
-  - asdf
+  - "@Covered in wounds, Tim\xED limped to the final floor of the tower. A pure black
+    room illuminated only a distant door. Tim\xED made his way slowly to the door,
+    his movements only growing slower "
+  - "Finally at the door, Tim\xED passed through only to encounter a balcony. He
+    looked over the edge to the gleaming lights of the city.@Smiling weakly, he muttered
+    \u201Cas if one man can change an entire society\u201D. Succumbing to his wounds,
+    Tim\xED laid down to watch the stars grow blurrier and blurrier.. "
+  - Your god is in another tower
 --- !u!4 &389018184
 Transform:
   m_ObjectHideFlags: 0
@@ -355,102 +359,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &389018185
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389018182}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c4314d7b881fd864abe1cb4560bbe07a, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &593869252
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +409,10 @@ MonoBehaviour:
   - {fileID: 1878159602}
   - {fileID: 852024429}
   - {fileID: 389018183}
+  audioClips:
+  - {fileID: 8300000, guid: 0744f67e2fb606e4384428650cfc5f92, type: 3}
+  - {fileID: 8300000, guid: cd587c512a6375940a65674c62846aad, type: 3}
+  - {fileID: 8300000, guid: c4314d7b881fd864abe1cb4560bbe07a, type: 3}
 --- !u!1 &852024428
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +423,6 @@ GameObject:
   m_Component:
   - component: {fileID: 852024430}
   - component: {fileID: 852024429}
-  - component: {fileID: 852024431}
   m_Layer: 0
   m_Name: PreBossFight
   m_TagString: Untagged
@@ -532,11 +443,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overlays:
-  - {fileID: 21300000, guid: 413ccca19c3c55d4795ea7b9f7c5c49c, type: 3}
-  - {fileID: 21300000, guid: 977e5658751bdd849a99f68907ce4c8d, type: 3}
+  - {fileID: 21300000, guid: d141fccf08865194dbe02b73df01f81b, type: 3}
+  - {fileID: 21300000, guid: 24b90a7e440a0b344a9cebfd002dd882, type: 3}
+  - {fileID: 21300000, guid: b4ea32961db4e6a44ade65c650cb69ff, type: 3}
   rawDialogues:
-  - asdf
-  - asdf
+  - "Tim\xED: I finally found you! I will make you pay for the crimes of killing
+    my family a thousand times over! I will make you wish for death to come to you
+    faster! "
+  - "\u2026"
+  - 'But he only smiled '
 --- !u!4 &852024430
 Transform:
   m_ObjectHideFlags: 0
@@ -551,102 +466,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &852024431
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852024428}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3319e6a4a1f6b674e894af039e160f56, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: -0.25
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &990977272
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1274961865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,7 +846,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1878159603}
   - component: {fileID: 1878159602}
-  - component: {fileID: 1878159604}
   m_Layer: 0
   m_Name: IntroSequence
   m_TagString: Untagged
@@ -1048,19 +866,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overlays:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 3287b80dd40f77f47ae9466b91f19224, type: 3}
+  - {fileID: 21300000, guid: dd66bbe4f875e58499aef6071272be7b, type: 3}
+  - {fileID: 21300000, guid: 71a84337abce27645b5bd3e7a7634e47, type: 3}
+  - {fileID: 21300000, guid: 2f917273dcb46da42825761b8d8f2c63, type: 3}
+  - {fileID: 21300000, guid: 9462b40e169c88448a2ccf364397c8b5, type: 3}
+  - {fileID: 21300000, guid: fe882e44c635ebc4aadad9495616aa44, type: 3}
   rawDialogues:
-  - asdf
-  - asdf
-  - asdf
-  - asdf
-  - asdf
-  - asdf
+  - "@The once proud race of the Dimiourg\xF3s inhabited the continent of D\xF3xa.@However,
+    with the appearance of the Tower, the shrewd businessmen rose to the top@...pushing
+    the inventors and scientists that had made the country world-renowned to the
+    bottom of the hierarchy.@There dwelled Tim\xED, his father, and his sister, struggling
+    daily to get through life."
+  - 'One day, Timi decides to venture out into the Outskirts, the wilds governed
+    by none, not even the Tower. '
+  - 'Ignoring the countless signs warning him not to leave, he slipped through the
+    crack in the wall '
+  - "What was meant to be a quick trip turned to a full day, and Tim\xED finally
+    began his trip back.@Unable to shake a strange feeling within himself, he uneasily
+    slipped through the crack once again"
+  - "At home, Tim\xED stared at the pool of blood that contained the remains of his
+    family.@Blinded by rage, he grabbed a sword that his father had kept for emergencies
+    and rushed towards the Tower"
+  - "The Tower, a mysterious structure that had appeared out of nowhere, flipping
+    the society of D\xF3xa on its head.@Rumors ran rampant of the corruption behind
+    this tower, and the inhabitants within. Tim\xED, knowing this, ran to the tower
+    with only one thing in his mind: vengeance "
 --- !u!4 &1878159603
 Transform:
   m_ObjectHideFlags: 0
@@ -1075,102 +906,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1878159604
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878159601}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0744f67e2fb606e4384428650cfc5f92, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 0
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1971643253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,6 +1120,7 @@ GameObject:
   - component: {fileID: 2100340692}
   - component: {fileID: 2100340691}
   - component: {fileID: 2100340694}
+  - component: {fileID: 2100340695}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1490,3 +1226,99 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!82 &2100340695
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100340690}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

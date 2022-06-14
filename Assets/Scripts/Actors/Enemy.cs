@@ -17,11 +17,17 @@ public class Enemy : MonoBehaviour
     public float dx;
     public float dy;
 
+    private float pH;
+    private float pV;
+
+    private double speedMag;
     private bool isAggrivated;
+    private Animator animator;
 
     private Player player;
     private void Start()
     {
+        animator = this.gameObject.GetComponent<Animator>();
         this.gameObject.tag = "Enemy";
         healthText = this.gameObject.transform.GetChild(0).GetComponent<TextMeshPro>();
         updateText();
@@ -30,6 +36,23 @@ public class Enemy : MonoBehaviour
         player = GameObject.Find("Player").gameObject.GetComponent<Player>();
     }
 
+    private void setAnimationValues()
+    {
+        animator.SetFloat("Horizontal", dx/Math.Abs(dx));
+        animator.SetFloat("Vertical", dy /Math.Abs(dy));
+        animator.SetFloat("pHorizontal", pH/ Math.Abs(pH));
+        animator.SetFloat("pVertical", pV/ Math.Abs(pV));
+        if(isAggrivated)
+        {
+            animator.SetFloat("Speed", (float)speedMag);
+        } else
+        {
+            animator.SetFloat("Speed", 0);
+        }
+        
+        
+
+    }
     private void die()
     {
         Destroy(this.gameObject);
@@ -83,14 +106,22 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        speedMag = Math.Sqrt(dx * dx + dy * dy);
         isAggrivated = Array.Exists(player.getEnemyRange(), x => x.Equals(this.gameObject.GetComponent<Collider2D>()));
+        Debug.Log(speedMag);
     }
 
     private void FixedUpdate()
     {
+        if (speedMag > 0.01)
+        {
+            pH = dx;
+            pV = dy;
+        }
         if(isAggrivated)
         {
             moveTowardPlayer();
         }
+        setAnimationValues();
     }
 }

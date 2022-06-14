@@ -11,7 +11,9 @@ public class CutsceneLoader : MonoBehaviour
     public GameObject speechBox;
     public GameObject imageBox;
     public SceneScript[] cutscenes;
+    public AudioClip[] audioClips;
 
+    private AudioSource audioSource;
     private SceneTracker tracker;
     private float skipTimer = 0.0f;
     private int currentScene;
@@ -19,16 +21,21 @@ public class CutsceneLoader : MonoBehaviour
     private int dialogueCounter = 0;
     private void Start()
     {
+        audioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         canvas = GameObject.Find("Canvas");
         tracker = GameObject.Find("SceneTracker").gameObject.GetComponent<SceneTracker>();
-        playScene(cutscenes[tracker.getCurrentScene()]);
+
+        currentScene = tracker.getCurrentScene();
+        audioSource.volume = GlobalVariables.VOLUME;
+
+        playScene(cutscenes[currentScene]);
     }
 
     private void Update()
     {
         if (Input.GetButtonDown("Skip"))
         {
-            playScene(cutscenes[tracker.getCurrentScene()]);
+            playScene(cutscenes[currentScene]);
         }
     }
 
@@ -69,10 +76,23 @@ public class CutsceneLoader : MonoBehaviour
             speechBox.GetComponent<TextMeshProUGUI>().text = currentDialogue[dialogueCounter];
             imageBox.GetComponent<Image>().sprite = currentImage;
         }
+
+        if(!audioSource.isPlaying)
+        {
+            Debug.Log("yo audio be doing");
+            audioSource.clip = audioClips[currentScene];
+            audioSource.Play();
+        }
+
+        Debug.Log("yo audio be not doing");
     }
 
     private void endScene()
     {
+        if(tracker.getCurrentScene() == 2)
+        {
+            new SceneButtonManager().quit();
+        }
         Debug.Log(tracker.getSceneTo());
         SceneManager.LoadScene(tracker.getSceneTo());
     }

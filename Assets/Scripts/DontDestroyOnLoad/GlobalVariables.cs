@@ -9,8 +9,10 @@ public class GlobalVariables : MonoBehaviour
 
     public static int currentSceneNum;
 
-    public void Start()
+    public void Awake()
     {
+        VOLUME = 1;
+        DEBUG = false;
         DontDestroyOnLoad(this.gameObject);
     }
 

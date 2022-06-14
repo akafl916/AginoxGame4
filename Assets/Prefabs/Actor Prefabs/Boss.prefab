@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3898245677166658209}
   - component: {fileID: 3898245677166658208}
   - component: {fileID: 3898245677166658210}
+  - component: {fileID: 6821017046779469564}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 37
-  m_Sprite: {fileID: 21300000, guid: 413ccca19c3c55d4795ea7b9f7c5c49c, type: 3}
+  m_Sprite: {fileID: -8780527952757444621, guid: 30ab1849af138e14bb02127aa9c4b299, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +113,7 @@ MonoBehaviour:
   - {x: -4.761673, y: 4.798078, z: 0}
   m_ShapePathHash: -458287811
   m_Mesh: {fileID: 0}
-  m_InstanceId: 30894
+  m_InstanceId: 69830
 --- !u!114 &3898245677166658209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +170,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.6, y: 9.6}
+    oldSize: {x: 0.18, y: 0.32}
     newSize: {x: 0.64, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -178,6 +179,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.6, y: 9.6}
   m_EdgeRadius: 0
+--- !u!95 &6821017046779469564
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898245677166658214}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ece8017539cf6d344871a4ac8b2be7aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3898245677425046944
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +309,7 @@ MonoBehaviour:
   - {x: -0.49076843, y: 0.48207745, z: 0}
   m_ShapePathHash: -2085549119
   m_Mesh: {fileID: 0}
-  m_InstanceId: -46148
+  m_InstanceId: 69840
 --- !u!50 &3898245677425046946
 Rigidbody2D:
   serializedVersion: 4
